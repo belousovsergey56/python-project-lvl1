@@ -49,10 +49,11 @@ def check_end_game(answer, random_num, player) -> bool:
 
 
 
-def main():
+def main(): # noqa E303
     welcome_game()
     player = prompt.string('May I have your name? ').title()
     print('Hello, {}'.format(player))
+    print(display_rules)
     for trying in range(3):
         random_num = get_random_number()
         print('Question:', random_num)
