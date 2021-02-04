@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 """Parity check. The Game."""
 
+import prompt
 from random import randint
-from prompt import string
-
 
 welcome = 'Welcome to the Brain Games!'
 display_rules = 'Answer "yes" if the number is even, otherwise answer "no".'
@@ -49,10 +48,10 @@ def check_end_game(answer, random_num, player) -> bool:
         return False
 
 
-if __name__ == '__main__':
 
+def main():
     welcome_game()
-    player = string('May I have your name? ').title()
+    player = prompt.string('May I have your name? ').title()
     print('Hello, {}'.format(player))
     for trying in range(3):
         random_num = get_random_number()
@@ -63,3 +62,7 @@ if __name__ == '__main__':
         else:
             continue
     print("Congratulations, {}!".format(player)) if trying == 2 else None
+
+
+if __name__ == '__main__':
+    main()
