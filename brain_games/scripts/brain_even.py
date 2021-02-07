@@ -35,7 +35,7 @@ def check_even_number(random_num) -> bool:
 
 def check_end_game(answer, random_num, player) -> bool:
     """Check victory and finish game"""
-    comment = "{} is wrong answer ;(. Correct answer was '{}'."
+    comment = "'{}' is wrong answer ;(. Correct answer was '{}'."
     even = check_even_number(random_num)
     if even and answer == YES or not even and answer == NO:
         print('Correct!')
