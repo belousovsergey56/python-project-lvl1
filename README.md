@@ -3,4 +3,4 @@
 
 ![Python CI](https://github.com/belousovsergey56/python-project-lvl1/workflows/Python%20CI/badge.svg?branch=master)  
 
-https://asciinema.org/a/RtbDTuzoVptMZqcB6hCyzLa8Y
+[![How to use](https://asciinema.org/a/389676)]
