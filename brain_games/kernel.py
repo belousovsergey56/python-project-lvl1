@@ -4,12 +4,14 @@ Game Engine.
 
 This module contains functions - interfaces for using and implementing games.
 """
+GRETEENG = 'Welcome to the Brain Games!'
+IS_WRONG = "'{1}' is wrong answer ;(. Correct answer was '{2}'."
+TRY_AGAIN = "Let's try again, {1}!"
 
 
 def welcome_to_the_game():
     """Do this print greteeng."""
-    greeteng = 'Welcome to the Brain Games!'
-    print(greeteng)
+    print(GRETEENG)
 
 
 def game_rules(rules: str):
@@ -37,3 +39,15 @@ def player_answer(question: str):
     """
     print('Question:', question)
     return input('Your answer: ')
+
+
+def display_wrong_answer(player_response, correct_answer, player_name):
+    """Display in console message correct and wrong answer.
+
+    Args:
+        player_response: The string
+        correct_answer: The string
+        player_name: The string
+    """
+    print(IS_WRONG.format(player_response, correct_answer))
+    print(TRY_AGAIN.format(player_name))
