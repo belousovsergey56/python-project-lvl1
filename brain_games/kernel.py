@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 Game Engine.
 
@@ -18,3 +19,21 @@ def game_rules(rules: str):
         rules: The string
     """
     print(rules)
+
+
+def player_answer(question: str):
+    """Player answer.
+
+    The function takes the game question.
+    Outputs it to the player.
+    Accepts his answer.
+    Returns a string with the answer.
+
+    Args:
+        question: The string
+
+    Returns:
+        answer: The string
+    """
+    print('Question:', question)
+    return input('Your answer: ')
