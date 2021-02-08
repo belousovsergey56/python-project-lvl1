@@ -9,9 +9,3 @@ def welcome_user() -> str:
             str, user name
     """
     return prompt.string('May I have your name? ')
-
-
-def welcome_to_the_game():
-    """Do this print greteeng."""
-    greeteng = 'Welcome to the Brain Games!'
-    print(greeteng)
