@@ -54,7 +54,7 @@ def display_wrong_answer(player_response, correct_answer, player_name):
 
 
 def display_correct(player_name, trying):
-    """Display in console message for youser, correct anwer or victory.
+    """Display in console message for user, correct answer or victory.
 
     Args:
         player_name: The string
