@@ -4,14 +4,14 @@ Game Engine.
 
 This module contains functions - interfaces for using and implementing games.
 """
-GRETEENG = 'Welcome to the Brain Games!'
+GREETING = 'Welcome to the Brain Games!'
 IS_WRONG = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
 TRY_AGAIN = "Let's try again, {0}!"
 
 
 def welcome_to_the_game():
-    """Do this print greteeng."""
-    print(GRETEENG)
+    """Do this print greeting."""
+    print(GREETING)
 
 
 def game_rules(rules: str):
