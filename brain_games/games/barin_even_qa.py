@@ -30,7 +30,7 @@ def brain_even_question() -> int:
 def brain_even_check_number(random_num) -> bool:
     """Return True if number is even.
 
-    If random_num % 2 == 0, number is even.
+    If random_num % 2 == 0, number is even. True.
 
     Args:
         random_num: int
