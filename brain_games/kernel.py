@@ -13,20 +13,16 @@ VICTORY = 'Congratulations, {0}!'
 CORRECT = 'Correct!'
 
 
-def welcome_to_the_game():
-    """Welcome. Display greeting."""
-    print(GREETING)
+def welcome() -> str:
+    """Welcome.
 
-
-def welcome_user() -> str:
-    """Welcome user.
-
-     Function ask users name.
+     Function greeting user and ask users name.
      And returns this value.
 
     Returns:
             str, user name
     """
+    print(GREETING)
     name = string('May I have your name? ').title()
     print('Hello, {0}!'.format(name))
     return name
@@ -82,3 +78,5 @@ def check_end_game(trying, user_resp, game_resp, user_name):
         print(IS_WRONG.format(user_resp, game_resp))
         print(TRY_AGAIN.format(user_name))
         return False
+
+def game_template():
