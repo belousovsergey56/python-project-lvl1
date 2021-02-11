@@ -13,11 +13,15 @@ VICTORY = 'Congratulations, {0}!'
 CORRECT = 'Correct!'
 
 
-def welcome_the_game_user() -> str:
+def welcome_the_game_user(rules: str) -> str:
     """Welcome.
 
      Function greeting user and ask users name.
      And returns this value.
+     Function display the game rules.
+
+    Args:
+        rules: str
 
     Returns:
             str, user name
@@ -25,26 +29,24 @@ def welcome_the_game_user() -> str:
     print(GREETING)
     name = string('May I have your name? ').title()
     print('Hello, {0}!'.format(name))
+    print(rules)
     return name
 
 
-def player_answer_and_rules(rules: str, question):
+def ask_player_take_answer(question):
     """Player answer.
 
-    Function display the game rules.
-    And function takes the game question.
+    Function takes the game question.
     Outputs it to the player.
     Accepts his answer.
     Returns a string with the answer.
 
     Args:
-        rules: str
         question: int, str
 
     Returns:
         answer: The string
     """
-    print(rules)
     print('Question:', question)
     return input('Your answer: ')
 
