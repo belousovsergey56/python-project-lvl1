@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 """Parity check. The Game."""
-from kernel import welcome_the_game_user, ask_player_take_answer
-from kernel import check_end_game
-from barin_even_qa import brain_even_rules, brain_even_question
-from barin_even_qa import brain_even_check_number
+from brain_games.kernel import (
+    welcome_the_game_user,
+    ask_player_take_answer,
+    check_end_game,
+)
+from brain_games.games.barin_even_qa import (
+    brain_even_rules,
+    brain_even_question,
+    brain_even_check_number,
+)
 
 
 def main():

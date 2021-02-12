@@ -1,9 +1,14 @@
 """Calculate the result of the expression. The game."""
-from kernel import check_end_game
-from kernel import welcome_the_game_user
-from kernel import ask_player_take_answer
-from brain_calc_qa import brain_calc_check_expression
-from brain_calc_qa import brain_calc_rules, brain_calc_question
+from brain_games.kernel import (
+    check_end_game,
+    welcome_the_game_user,
+    ask_player_take_answer,
+)
+from brain_games.games.brain_calc_qa import (
+    brain_calc_check_expression,
+    brain_calc_rules,
+    brain_calc_question,
+)
 
 
 def main():
