@@ -41,7 +41,7 @@ def brain_calc_question() -> str:
     return question.format(first_number, sign, second_number)
 
 
-def brain_calc_check_expression(string_q: str) -> int:
+def brain_calc_check_expression(string_q: str) -> str:
     """Check expression.
 
     The function accepts a string. Expression.
@@ -52,7 +52,7 @@ def brain_calc_check_expression(string_q: str) -> int:
         string_q: str, questions
 
     Returns:
-        integer
+        string
 
     """
     split_expression = string_q.split()
@@ -60,8 +60,8 @@ def brain_calc_check_expression(string_q: str) -> int:
     second_number = int(split_expression[2])
     sign = split_expression[1]
     if sign == '+':
-        return OPERATORS[0](first_number, second_number)
+        return str(OPERATORS[0](first_number, second_number))
     elif sign == '*':
-        return OPERATORS[1](first_number, second_number)
+        return str(OPERATORS[1](first_number, second_number))
     elif sign == '-':
-        return OPERATORS[2](first_number, second_number)
+        return str(OPERATORS[2](first_number, second_number))
