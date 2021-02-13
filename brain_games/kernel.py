@@ -74,3 +74,30 @@ def check_end_game(trying, user_resp, game_resp, user_name):
         print(IS_WRONG.format(user_resp, game_resp))
         print(TRY_AGAIN.format(user_name))
         return False
+
+
+def run(rules, game_question, game_answer):
+    """Run game.
+
+    1. Welcome the Brain Game
+    2. Game, ask user name
+    3. Hello, user name
+    4. Display rules
+    5. Question for user
+    6. User must give three correct response
+    7. Game over
+
+    Args:
+         rules: str, game rules
+         game_question: str
+         game_answer: str
+
+    """
+    player_name = welcome_the_game_user(rules())
+    for trying in range(3):
+        question = game_question()
+        answer = ask_player_take_answer(question)
+        correct_answer = game_answer(question)
+        if check_end_game(trying, answer, correct_answer, player_name):
+            continue
+        break
