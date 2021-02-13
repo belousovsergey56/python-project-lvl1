@@ -23,22 +23,25 @@ def brain_game_gcd_question():
     Function generate two random numbers in 1 to 100
 
     Returns:
-        two random numbers: tuple
+        two random numbers: str
 
     """
     first_number = SystemRandom().randint(1, 100)
     second_number = SystemRandom().randint(1, 100)
-    return first_number, second_number
+    question = '{0} {1}'
+    return question.format(first_number, second_number)
 
 
-def brain_game_gcd_correct_answer(number_one, number_two):
+def brain_game_gcd_correct_answer(question):
     """Game answer.
 
     Args:
-        number_one: int
-        number_two: int
+        question: str
 
     Returns:
         str
     """
+    numbers = question.split(' ')
+    number_one = int(numbers[0])
+    number_two = int(numbers[1])
     return str(gcd(number_one, number_two))
