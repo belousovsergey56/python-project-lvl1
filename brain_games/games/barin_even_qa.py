@@ -27,7 +27,7 @@ def brain_even_question() -> int:
     return SystemRandom().randint(1, 100)
 
 
-def brain_even_check_number(random_num) -> bool:
+def brain_even_check_number(random_num) -> str:
     """Return True if number is even.
 
     If random_num % 2 == 0, number is even. True.
@@ -36,6 +36,7 @@ def brain_even_check_number(random_num) -> bool:
         random_num: int
 
     Returns:
-        bool
+        string
     """
-    return random_num % 2 == 0
+    true_false = random_num % 2 == 0
+    return 'yes' if true_false else 'no'
