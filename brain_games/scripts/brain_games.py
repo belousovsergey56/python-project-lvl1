@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """Simple module, with import and function Greeting user."""
-from cli import welcome_user
+from brain_games.cli import welcome_user
 
 WELCOME = 'Welcome to the Brain Games!'
 GREETING = 'Hello, {0}!'

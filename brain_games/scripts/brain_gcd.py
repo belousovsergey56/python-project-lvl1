@@ -2,12 +2,12 @@
 
 The game script in function.
 """
-from games.brain_gcd_qa import (
+from brain_games.games.brain_gcd_qa import (
     brain_game_gcd_correct_answer,
     brain_game_gcd_question,
     brain_game_gcd_rules,
 )
-from kernel import (
+from brain_games.kernel import (
     ask_player_take_answer,
     check_end_game,
     welcome_the_game_user,
