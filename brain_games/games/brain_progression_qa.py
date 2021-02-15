@@ -8,8 +8,12 @@ The length of the progression is from 5 to 10 numbers.
 """
 from random import SystemRandom
 
-min_length = 10  # minimal progression length
-max_length = 20  # maximal progression length
+min_limit = 10  # minimal progression length
+max_limit = 31  # maximal progression length
+diff_limits = 20
+progression_list = []
+dots = '..'
+space = ' '
 
 
 def brain_progression_rules() -> str:
@@ -23,7 +27,7 @@ def brain_progression_rules() -> str:
     return 'What number is missing in the progression?'
 
 
-def random_progression() -> list:
+def random_progression():
     """Random progression.
 
     The function has the variables
@@ -31,27 +35,40 @@ def random_progression() -> list:
     stop, progression length
     step, step of progression
 
+    """
+    progression_list.clear()
+    start = SystemRandom().randint(0, 100)
+    stop = SystemRandom().randint(min_limit, max_limit) + start
+    step = 0
+    if stop - start < diff_limits:
+        step += 2
+    else:
+        step += SystemRandom().randint(3, 5)
+    for numbers in range(start, stop, step):
+        progression_list.append(numbers)
+
+
+def brain_progression_question(_list: list) -> str:
+    """Brain_progression_question.
+
+    Function take a list, replace random number and return string numbers
+
+    Args:
+        _list: progression list
+
     Returns:
-         list
+        str
+
     """
-    start = SystemRandom().randint(1, 100)
-    stop = SystemRandom().randint(min_length, max_length) + start
-    step = SystemRandom().randint(2, 4)
-    progression_list = []
+    secret_num = SystemRandom().choice(_list)
+    question = ''
 
-    while len(progression_list) < 5 or len(progression_list) >= 10:
-        for numbers in range(start, stop, step):
-            progression_list.append(str(numbers))
-    return progression_list
-
-
-def brain_progression_question() -> str:
-    """Brain question.
-
-    Function returns random arithmetic progression
-    Random number in the progression is stitched and must be guessed
-    Length of the progression is from 5 to 10 numbers
-
-    Returns: str
-    """
-    pass
+    for key, numbers in enumerate(_list):
+        if secret_num == numbers:
+            question += dots if key == len(_list) - 1 else dots + space
+        else:
+            question += (
+                str(numbers) if key == len(_list) - 1
+                else str(numbers) + space
+            )
+    return question, secret_num
