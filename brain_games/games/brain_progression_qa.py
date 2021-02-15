@@ -48,7 +48,7 @@ def random_progression():
         progression_list.append(numbers)
 
 
-def brain_progression_question(_list: list) -> str:
+def brain_progression_question(_list: list) -> tuple:
     """Brain_progression_question.
 
     Function take a list, replace random number and return string numbers
@@ -57,7 +57,7 @@ def brain_progression_question(_list: list) -> str:
         _list: progression list
 
     Returns:
-        str
+        str, int
 
     """
     secret_num = SystemRandom().choice(_list)
