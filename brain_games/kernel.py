@@ -4,6 +4,8 @@ Game Engine.
 
 This module contains functions - interfaces for using and implementing games.
 """
+from sys import stdout
+
 from prompt import string
 
 GREETING = 'Welcome to the Brain Games!'
@@ -11,6 +13,18 @@ IS_WRONG = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
 TRY_AGAIN = "Let's try again, {0}!"
 VICTORY = 'Congratulations, {0}!'
 CORRECT = 'Correct!'
+QUESTION = 'Question: {0}'
+
+
+def printer(line):
+    """Print lines.
+
+    Args:
+        line: str, int
+
+    """
+    to_print = '{0}\n'.format(str(line))
+    stdout.writelines(to_print)
 
 
 def welcome_the_game_user(rules: str) -> str:
@@ -26,10 +40,10 @@ def welcome_the_game_user(rules: str) -> str:
     Returns:
             str, user name
     """
-    print(GREETING)
+    printer(GREETING)
     name = string('May I have your name? ').title()
-    print('Hello, {0}!'.format(name))
-    print(rules)
+    printer('Hello, {0}!'.format(name))
+    printer(rules)
     return name
 
 
@@ -47,8 +61,8 @@ def ask_player_take_answer(question):
     Returns:
         answer: The string
     """
-    print('Question:', question)
-    return input('Your answer: ')
+    printer(QUESTION.format(question))
+    return string('Your answer: ')
 
 
 def check_end_game(trying, user_resp, game_resp, user_name):
@@ -67,13 +81,13 @@ def check_end_game(trying, user_resp, game_resp, user_name):
         True or False
     """
     if user_resp == game_resp:
-        print(CORRECT)
-        print(VICTORY.format(user_name)) if trying == 2 else None
+        printer(CORRECT)
+        if trying == 2:
+            printer(VICTORY.format(user_name))
         return True
-    else:
-        print(IS_WRONG.format(user_resp, game_resp))
-        print(TRY_AGAIN.format(user_name))
-        return False
+    printer(IS_WRONG.format(user_resp, game_resp))
+    printer(TRY_AGAIN.format(user_name))
+    return False
 
 
 def run(rules, game_question, game_answer):
