@@ -10,3 +10,11 @@ package-install:
 	python3 -m pip install --user dist/*.whl
 lint:
 	poetry run flake8 brain_games
+remove:
+	pip3 uninstall hexlet-code
+reinstall:
+	make remove
+	make install
+	make build
+	make publish
+	make package-install
