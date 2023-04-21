@@ -13,7 +13,7 @@ You can play five games:
 - Correctly choose a prime number from the two offered
 
 # Brain-even
-[![asciicast](https://asciinema.org/a/Mu49yyUkvNPcWpAS9rNTOGIn5.png)](https://asciinema.org/a/Mu49yyUkvNPcWpAS9rNTOGIn5)  
+[![asciicast](https://asciinema.org/a/Mu49yyUkvNPcWpAS9rNTOGIn5.gif)](https://asciinema.org/a/Mu49yyUkvNPcWpAS9rNTOGIn5)  
 
 # Brain-calc
 [![asciicast](https://asciinema.org/a/390931.png)](https://asciinema.org/a/390931)
